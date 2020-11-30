@@ -11,8 +11,8 @@
   DTS:LocaleID="2058"
   DTS:ObjectName="0001_Carga_Empaque_Dim"
   DTS:PackageType="5"
-  DTS:VersionBuild="127"
-  DTS:VersionGUID="{DE8942C0-53B4-49DD-A436-F5BCE8D3819A}">
+  DTS:VersionBuild="128"
+  DTS:VersionGUID="{510766C7-CE65-42E2-99AC-FF96C2F3EE27}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -35,7 +35,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0eobYAjNJEio/4zYcrp8+wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/TLaz+XdlTXZdBu2e31I27gaHIV8EB+8E+uFWpEbjTQAAAAAOgAAAAAIAACAAAACVAeqq980l2Nxq8TRb+lJhO36RopeToL/WkrnZA2fpUSAAAAB0rcr0v9F6QbjbmVa6FfdAi8UkpYMAwgET4DKt/G6QiEAAAADvjvEUbroKbvzfE2uq60+VZWrK0NLyEwclNLg6FXGyAJirKPurYT+x829+ZSwgjLVFDu0KDrL3teEKqBf8w+MW</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhRas7jKmRkSgFXd/Ehiv1QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7vi9qbHcZsDx65tlph1SMPB7LplVGWl7eK/MACqfN7AAAAAAOgAAAAAIAACAAAAAKRHRjIvFRjXwGUdWBDYaNE9tm6sXPPmrsMs3Sp7mBDiAAAADMiy12Jzgf1mC4zVt90OluHkeR2U/HEhRKknSpsBzz90AAAADg0KJCr/rdWFZdqoRTW325+Wl0lXr80IorRD6bgg5y1KQfJGpy5ejOvpFUQVXej18SLLEOWMeaj1pgMyxuBIUt</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -58,7 +58,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0eobYAjNJEio/4zYcrp8+wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAABmEgLT79JfbGMHQh3yyijsmNnxdDurqswaLvbJ4MNIwAAAAAOgAAAAAIAACAAAAD5NT0fAy7+MRuUz7B/qgkRDB/mfPNKKBl9zrhBUMk2EiAAAADsSxKYh+OU80BhTUwbpFi55rh8FuOkmyH083eXHPF+d0AAAAA4bxrdLCz2s1+M6Q9HPK00vEB3hOMrySDGXIuZobnNfhGnYgKYIrl/+I09yh97RbZWeQpcDJic3ueXp9/3LtjU</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhRas7jKmRkSgFXd/Ehiv1QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADy493jYl6d8io+4iSWOcclwO27fBLM/kXW5/+8zoirmgAAAAAOgAAAAAIAACAAAAD9x8SbgM5aKzcKpks0qBYEIga28t1jru2s5l39q/xxxCAAAAAehzSmKBeXSmTzlUktDbbxmy5nwqvaB9JExQSD+fUv7kAAAAAXFkFW/Ki/rcU/axsXUrUXyYWnc8a50kHTUXP2keifBVtPZi4V+SG8QyjjgaW3WaDjpQm4kKKfYEt9RfArmzt+</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -127,6 +127,20 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{1C84BD12-0A79-45B0-B725-2D0539564F8C}"
           SQLTask:SqlStatementSource="IF  EXISTS (SELECT name FROM sysobjects WHERE name= 'PROC_DIM_TIEMPO') BEGIN&#xA;      DROP PROCEDURE PROC_DIM_TIEMPO &#xA;END  &#xA;go&#xA;&#xA;CREATE PROCEDURE [dbo].[PROC_DIM_TIEMPO]&#xA;AS &#xA;             --/*Creaci�n de la tabla*/&#xA;&#xA;IF  EXISTS (SELECT name FROM sysobjects WHERE name= 'Dim_Tiempo') BEGIN&#xA;      DROP TABLE Dim_Tiempo &#xA;END  &#xA;&#xA;&#xA;CREATE TABLE [Dim_Tiempo]&#xA;(&#xA; [SK_tiempo] [INT] NOT NULL,&#xA; [Fecha] [DATE] NOT NULL,&#xA; [Fecha_DT] [DATETIME] NOT NULL,&#xA; [Fecha_ST] [VARCHAR](10) NOT NULL,&#xA; [Año] [SMALLINT] NOT NULL,&#xA; [Trimestre] [SMALLINT] NOT NULL,&#xA; [Mes] [SMALLINT] NOT NULL,&#xA; [Semana] [SMALLINT] NOT NULL,&#xA; [Dia] [SMALLINT] NOT NULL,&#xA; [DiaSemana] [SMALLINT] NOT NULL,&#xA; [NTrimestre] [CHAR](7) NOT NULL,&#xA; [NMes] [CHAR](15) NOT NULL,&#xA; [NMes3L] [CHAR](3) NOT NULL,&#xA; MesAño char(9) not null,&#xA; [NSemana] [CHAR](10) NOT NULL,&#xA; [NDia] [CHAR](6) NOT NULL,&#xA; [NDiaSemana] [CHAR](10) NOT NULL,&#xA;&#xA;)&#xA;&#xA;&#xA;&#xA;&#xA;/*Script de carga*/&#xA;&#xA;DECLARE @FechaDesde as smalldatetime, @FechaHasta as smalldatetime&#xA;DECLARE @FechaAAAAMMDD INT&#xA;DECLARE @Fecha_DT DATETIME&#xA;DECLARE @Fecha_ST VARCHAR(10)&#xA;DECLARE @Año as smallint, @Trimestre char(2), @Mes SMALLINT&#xA;&#xA;DECLARE @Semana smallint, @Dia smallint, @DiaSemana smallint&#xA;DECLARE @NTrimestre char(7), @NMes char(15)&#xA;DECLARE @NMes3l char(3)&#xA;DECLARE @MesAño char(9)&#xA;DECLARE @NSemana char(10), @NDia char(6), @NDiaSemana char(10)&#xA;--Set inicial por si no coincide con los del servidor&#xA;SET DATEFORMAT dmy&#xA;SET DATEFIRST 1&#xA;&#xA;BEGIN TRANSACTION&#xA;    --Borrar datos actuales, si fuese necesario&#xA;    TRUNCATE TABLE Dim_Tiempo&#xA;&#xA;&#xA;-- ********************************  set the date hhere **********************************&#xA; SELECT @FechaDesde = CAST('20130205' AS smalldatetime)&#xA;    SELECT @FechaHasta = (SELECT CAST(DATEADD(YEAR,1,GETDATE())AS smalldatetime) )&#xA;&#xA;-- ******************************************************************************************&#xA;    WHILE (@FechaDesde &lt;= @FechaHasta) BEGIN&#xA;    SELECT @FechaAAAAMMDD = YEAR(@FechaDesde)*10000+&#xA;                            MONTH(@FechaDesde)*100+&#xA;                            DATEPART(dd, @FechaDesde)&#xA; SELECT @Fecha_DT = @FechaDesde&#xA; SELECT @Fecha_ST = CONVERT(VARCHAR(10), @FechaDesde, 105)&#xA;    SELECT @Año = DATEPART(yy, @FechaDesde)&#xA;    SELECT @Trimestre = DATEPART(qq, @FechaDesde)&#xA;    SELECT @Mes = DATEPART(m, @FechaDesde)&#xA;    SELECT @Semana = DATEPART(wk, @FechaDesde)&#xA;    SELECT @Dia = RIGHT('0' + DATEPART(dd, @FechaDesde),2)&#xA;    SELECT @DiaSemana = DATEPART(DW, @FechaDesde)&#xA;    SELECT @NMes = DATENAME(mm, @FechaDesde)&#xA;    SELECT @NMes3l = LEFT(@NMes, 3)&#xA;&#xA; SELECT @MesAño = RIGHT('0' + CAST(MONTH(@FechaDesde) AS VARCHAR(2)),2) +'-'+ CAST(YEAR(@FechaDesde) AS CHAR(4)) &#xA;    SELECT @NTrimestre = 'T' + CAST(@Trimestre as CHAR(1)) + '/' + RIGHT(@Año, 2)&#xA;    SELECT @NSemana = 'Sem ' +CAST(@Semana AS CHAR(2)) + '/' + RIGHT(RTRIM(CAST(@Año as CHAR(4))),2)&#xA;    SELECT @NDia = CAST(@Dia as CHAR(2)) + ' ' + RTRIM(@NMes)&#xA;    SELECT @NDiaSemana = DATENAME(dw, @FechaDesde)&#xA;    INSERT INTO Dim_Tiempo&#xA;    (&#xA;        SK_tiempo,&#xA;        Fecha,&#xA;  Fecha_DT,&#xA;  Fecha_ST,&#xA;  Año,&#xA;        Trimestre,&#xA;        Mes,&#xA;        Semana,&#xA;        Dia,&#xA;        DiaSemana,&#xA;        NTrimestre,&#xA;        NMes,&#xA;        NMes3L,&#xA;  MesAño,&#xA;        NSemana,&#xA;        NDia,&#xA;        NDiaSemana&#xA;    ) VALUES&#xA;    (&#xA;        @FechaAAAAMMDD,&#xA;        @FechaDesde,&#xA;  @Fecha_DT,&#xA;  @Fecha_ST,&#xA;        @Año,&#xA;        @Trimestre,&#xA;        @Mes,&#xA;        @Semana,&#xA;        @Dia,&#xA;        @DiaSemana,&#xA;        @NTrimestre,&#xA;        @NMes,&#xA;        @NMes3l,&#xA;  @MesAño,&#xA;        @NSemana,&#xA;        @NDia,&#xA;        @NDiaSemana&#xA;    )&#xA;    --Incremento del bucle&#xA;    SELECT @FechaDesde = DATEADD(DAY, 1, @FechaDesde)&#xA;    END&#xA;    COMMIT TRANSACTION&#xA;&#xA;&#xA;&#xA;GO;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5BE12E45-3EF1-43D3-8581-FA4C0EB01767}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -17442,7 +17456,7 @@ where [refTable].[c_codigo_tem] = ? and [refTable].[c_codigo_lot] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                      name="ParameterMap">#{Package\Sequence Container 2\Dim_Recepciondet\388:invalid};#{Package\Sequence Container 2\Dim_Recepciondet\389:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence Container 2\Dim_Recepciondet\1605:invalid};#{Package\Sequence Container 2\Dim_Recepciondet\1606:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -17621,7 +17635,7 @@ where [refTable].[c_codigo_rec] = ? and [refTable].[c_codigo_tem] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
-                      name="ParameterMap">#{Package\Sequence Container 2\Dim_Recepciondet\390:invalid};#{Package\Sequence Container 2\Dim_Recepciondet\388:invalid};</property>
+                      name="ParameterMap">#{Package\Sequence Container 2\Dim_Recepciondet\1607:invalid};#{Package\Sequence Container 2\Dim_Recepciondet\1605:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -22307,6 +22321,10 @@ where [refTable].[c_codigo_tem] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="414,77" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
