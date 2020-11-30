@@ -1,0 +1,397 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/21/2018 12:05:47 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="INVENTUM47"
+  DTS:CreatorName="INVENTUM47\INVENTUM48"
+  DTS:DTSID="{5FA04087-C9A6-46D0-ABB7-E66601C74913}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3257.3"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="0000_Main"
+  DTS:PackageType="5"
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{E36B4B80-C4BE-4816-815A-C05FE60941F2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ODS_Package]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D975FDBE-FEC3-4010-B40E-C5808F8B8716}"
+      DTS:ObjectName="ODS_Package">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[$Package::ODS]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::Server]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::User]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=INVENTUM89;User ID=sa;Initial Catalog=ODS_General_inventum;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0eobYAjNJEio/4zYcrp8+wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABo4yXtt/bAb0nOWeoc1/sPaYX+iUTv0oxHReV0GxzjLgAAAAAOgAAAAAIAACAAAAA7xxBz+gyzwpU1WPXbBIl7yiyPHMO/jXxb8NRULnb+ECAAAAB7iYfBffWROdvjqTWv4JrJ31ZcgyN6D8fwzUNwvu1AykAAAABpP70H9L5cNJxZYSGLyFJ/mm67ShO7KUq2jJqcDUb1QsiLGmOEF5jkV8Lh8eNvmnF4eJMk1kZdVDez4Oj2+wWI</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[STG_Package]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5C585785-F3DD-4417-9E6C-CF97D69B416A}"
+      DTS:ObjectName="STG_Package">
+      <DTS:PropertyExpression
+        DTS:Name="InitialCatalog">@[$Package::STG]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Password">@[$Package::Password]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[$Package::Server]</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="UserName">@[$Package::User]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=INVENTUM89;User ID=sa;Initial Catalog=STG_Inventum_mat;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0eobYAjNJEio/4zYcrp8+wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB7Oj0H/p9g/bL2QWOLQ1OlhFX5h09fsie3Zdlk6OCBFwAAAAAOgAAAAAIAACAAAADAXvLuGW8hdAygSPaR4OXLVtXPQ1hKRv8XLuHwS0RpKiAAAACEvke8cf8pcUUthGNqU1UxX2dkCpBc5fTK1GARmM3BjUAAAACiWZuFqd72xoZIWJMZcg9fcamN4QZZc/bOf1ZHJPC28Rl9WbXPUG0iPyA/AnzVSGc1xxWqONyQUKbxS7CMNkne</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{D0B01FDF-2888-4BC3-8D08-E60C50998439}"
+      DTS:ObjectName="ODS">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ODS_General_inventum</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{1CBB5103-5319-4DE5-901D-88EBE33C97F2}"
+      DTS:ObjectName="ODS_EMPA">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">ODS_Empaque_General</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5ACF0143-2A48-41C0-A277-49FDE13C1705}"
+      DTS:ObjectName="Password">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">inventum</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B2773340-79FD-482F-8EF0-102132403A8A}"
+      DTS:ObjectName="Server">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">INVENTUM89</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{ED8908B9-A05B-4DBE-8428-CCE6EC41EE10}"
+      DTS:ObjectName="STG">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">STG_Inventum_mat</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{EC565E7E-1325-41E3-B4A5-0AF71A1B76B7}"
+      DTS:ObjectName="User">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">sa</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Compras"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Compras"
+      DTS:DTSID="{B11C1B54-DD8B-48E9-8AB5-EAD2D01E6B55}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Compras"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>0002_Dim_Compras.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>ODS</ParameterName>
+            <BindedVariableOrParameterName>$Package::ODS</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>passwrod</ParameterName>
+            <BindedVariableOrParameterName>$Package::Password</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Server</ParameterName>
+            <BindedVariableOrParameterName>$Package::Server</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>STG</ParameterName>
+            <BindedVariableOrParameterName>$Package::STG</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>User</ParameterName>
+            <BindedVariableOrParameterName>$Package::User</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Costos e Insumos"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Costos e Insumos"
+      DTS:DTSID="{08B0DE25-FD4D-4950-87F8-25C966190921}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Costos e Insumos"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>0004_Dim_Costos_Insumos.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>ODS</ParameterName>
+            <BindedVariableOrParameterName>$Package::ODS</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Password</ParameterName>
+            <BindedVariableOrParameterName>$Package::Password</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Server</ParameterName>
+            <BindedVariableOrParameterName>$Package::Server</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Source</ParameterName>
+            <BindedVariableOrParameterName>$Package::STG</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Username</ParameterName>
+            <BindedVariableOrParameterName>$Package::User</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CXP"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="CXP"
+      DTS:DTSID="{791DF854-68DC-4665-B180-E0ECE502F456}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CXP"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>0003_Dim_CXP.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>ODS</ParameterName>
+            <BindedVariableOrParameterName>$Package::ODS</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Password</ParameterName>
+            <BindedVariableOrParameterName>$Package::Password</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Server</ParameterName>
+            <BindedVariableOrParameterName>$Package::Server</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>STG</ParameterName>
+            <BindedVariableOrParameterName>$Package::STG</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>User</ParameterName>
+            <BindedVariableOrParameterName>$Package::User</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Empaque"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Empaque"
+      DTS:DTSID="{29F9BFD6-8925-4789-8ED1-0F4E25D8FFB5}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Empaque"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>0001_Carga_Empaque_Dim.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>ODS</ParameterName>
+            <BindedVariableOrParameterName>$Package::ODS_EMPA</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>PASS</ParameterName>
+            <BindedVariableOrParameterName>$Package::Password</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>SERVER</ParameterName>
+            <BindedVariableOrParameterName>$Package::Server</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>STAGE</ParameterName>
+            <BindedVariableOrParameterName>$Package::STG</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>USER</ParameterName>
+            <BindedVariableOrParameterName>$Package::User</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{95EBB078-B16F-43FD-B7A3-4EDED9BE668C}"
+      DTS:From="Package\Empaque"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Compras" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B6574DED-1FFC-4B6F-AD9F-5B3EA5BBCF1A}"
+      DTS:From="Package\Compras"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\CXP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{705AF9DC-C633-4916-9407-A93CA42FE1B0}"
+      DTS:From="Package\CXP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Costos e Insumos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Compras"
+          TopLeft="81,92" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Costos e Insumos"
+          TopLeft="62,244" />
+        <NodeLayout
+          Size="97,42"
+          Id="Package\CXP"
+          TopLeft="90,162" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Empaque"
+          TopLeft="47,19" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="141.25,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="139.75,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="141,204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
